@@ -1,15 +1,20 @@
 <template>
 	<view class="content">
 		<view>
-			<text class="title">{{title}}</text>
-      <button>ceshi</button>
+			<text class="title" @click="test">{{title}}</text>
+      <VantButton type="danger">大号按钮</VantButton>
+      <Rate :value="3" size="25" />
 		</view>
 	</view>
 </template>
 
 <script>
-import request from "@/api/request"
+import VantButton from "@/wxcomponents/vant/button/index"
+import Rate from "@/wxcomponents/vant/rate/index"
+
+// import request from "@/api/request"
 export default {
+  components: {VantButton, Rate},
   data() {
     return {
       title: "Hello UniApp "
@@ -17,19 +22,19 @@ export default {
   },
   onLoad() {
     this.test()
-    console.log("onLoad")
   },
   methods: {
     async test() {
-      let data = await request.get("/test/")
-      console.log(data)
-      console.log("after")
     }
   }
 }
 </script>
 
 <style lang="scss">
+.content {
+  width: 100vw;
+  height: 100vh;
+}
 	.title {
 		font-size: 36px;
     color: $uni-color-primary;

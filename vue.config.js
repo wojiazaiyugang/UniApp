@@ -13,6 +13,7 @@ module.exports = {
     name: "HiCoachAdmin",
     resolve: {
       alias: {
+        "@vant": resolve("wxcomponents/vant/"),
         "@": resolve("src"),
       },
     },
