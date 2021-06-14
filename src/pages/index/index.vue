@@ -8,22 +8,21 @@
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				title: 'Hello'
-			}
-		},
-		onLoad() {
+export default {
+  data() {
+    return {
+      title: "Hello UniApp"
+    }
+  },
+  onLoad() {
+  },
+  methods: {
 
-		},
-		methods: {
-
-		}
-	}
+  }
+}
 </script>
 
-<style>
+<style lang="scss">
 	.content {
 		display: flex;
 		flex-direction: column;
@@ -44,6 +43,7 @@
 
 	.title {
 		font-size: 36rpx;
-		color: #8f8f94;
+		/*color: #8f8f94;*/
+    //color: var($uni-color-primary);
 	}
 </style>
