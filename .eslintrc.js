@@ -36,6 +36,7 @@ module.exports = {
       "never"
     ],
     "no-console": "off",
-    "no-restricted-globals": ["off", "__static"]
+    "no-restricted-globals": ["off", "__static", "uni"],
+    "no-undef": "off"
   }
 }
