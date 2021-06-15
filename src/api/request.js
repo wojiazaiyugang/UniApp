@@ -2,13 +2,13 @@ import axios from "axios"
 
 import {isDev} from "@/utils/development"
 
-const service = axios.create({
+const request = axios.create({
   baseURL: isDev() ? "http://127.0.0.1:5000" : "http://49.232.142.100:5006",
   timeout: 5000,
   crossDomain: true
 })
 
-service.interceptors.request.use(
+request.interceptors.request.use(
   config => {
     return config
   },
@@ -18,7 +18,7 @@ service.interceptors.request.use(
   }
 )
 
-service.interceptors.response.use(
+request.interceptors.response.use(
   response => {
     let data = response.data
     if (data.code !== 0) {
@@ -60,4 +60,4 @@ axios.defaults.adapter = config => {
   })
 }
 
-export default service
+export default request
